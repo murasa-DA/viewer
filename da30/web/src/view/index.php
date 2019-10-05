@@ -18,12 +18,12 @@
 			    //data : サーバに送信する値
 			    $.ajax({
 			      type: "POST",
-			      url: "send.php",
+			      url: "Ajaxview.php",
 			      data: data,
 			      //Ajax通信が成功した場合に呼び出されるメソッド
 			      success: function(data, dataType){
 			        //デバッグ用 アラートとコンソール
-			        alert(data);
+			        alert("succsess" + data);
 			        console.log(data);
 
 			        //出力する部分
@@ -54,7 +54,7 @@
 
 		<h1>Shinjuku Station Map</h1>
 		<div class="stage">
-			<ul>
+			<ul id="result">
 				<?php makeInnerViwe(); ?>
 			</ul>
 
@@ -78,9 +78,11 @@
 <?php
 
 
+
+// TODO:共通化してない
 function makeInnerViwe() {
 
-    include('DBaccess.php');
+    include('Ajaxview.php');
 
     $dbaccess = new DBaccess();
     $res = $dbaccess->getAisle(null);
