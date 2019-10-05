@@ -82,7 +82,7 @@
 // TODO:共通化してない
 function makeInnerViwe() {
 
-    include('Ajaxview.php');
+    include('DBaccess.php');
 
     $dbaccess = new DBaccess();
     $res = $dbaccess->getAisle(null);
