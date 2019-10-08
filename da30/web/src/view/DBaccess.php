@@ -25,5 +25,8 @@ class DBaccess {
 
         return $res;
     }
+    function gitTest(){
+      return null;
+    }
 }
 ?>
