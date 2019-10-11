@@ -7,14 +7,14 @@
     //Ajaxによるリクエストかどうかの識別を行う
     //strtolower()を付けるのは、XMLHttpRequestやxmlHttpRequestで返ってくる場合があるため
     $dbaccess = new DBaccess();
-    $res = $dbaccess->getAisle(null);
+    $res = $dbaccess->getRoad($_SESSION["id"]);
     while ($row = $res->fetch_assoc()) {
         //var_dump($row["aisleid"]);
         //var_dump($row["aislename"]);
 		echo '<ul>';
         if($row["northid"]){
             echo '<li class="uppush send">';
-            echo "<a href='./index.html'>上</a>";
+            echo "<a href='./'>上</a>";
             echo '</li>';
         }
         if($row["southid"]){
